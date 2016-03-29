@@ -1,0 +1,11 @@
+{
+  "name": "Discoverer-GUI",
+  "description": "Discoverer Web Interface",
+  "version": "0.1.1",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cors": "^2.7.1",
+    "express": "*",
+    "serve-static": "^1.10.2"
+  }
+}

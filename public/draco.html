@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DrACO - SeaClouds</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="script/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="script/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script/draco/providerMap.js"></script>
+    <script type="text/javascript" src="script/draco/draco.js"> </script>
+</head>
+<body onload="loadProviders();">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.seaclouds-project.eu/">SeaClouds</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://raw.githubusercontent.com/jacopogiallo/DrACO/master/definitions/draco-types.tosca" target="_blank">draco-types.tosca</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="jumbotron" style="padding:0;margin-top:60px">
+            <table>
+                <tr>
+                    <td style="width:2%"></td>
+                    <td style="width:5%">
+                        <img src="img/draco.png" style="width:70%">
+                    </td>
+                    <td style="margin-left:3%;width:70%">
+                        <div>
+                            <h1><b>DrACO</b></h1>
+                            <p>Discovering Available Cloud Offerings.</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <form class="form-horizontal">
+            <fieldset>
+                <legend>Offering type</legend>
+                <div class="form-group">
+                    <label for="div" class="col-lg-2 control-label">Type</label>
+                    <div class="col-lg-10">
+                        <div class="radio">
+                            <label style="margin-right:2%">
+                                <input class="offering-type" type="radio" name="optionsRadios" id="optAll" value="all" checked="">
+                                All
+                            </label>
+                            <label style="margin-right:2%">
+                                <input class="offering-type" type="radio" name="optionsRadios" id="optIaaS" value="compute">
+                                IaaS
+                            </label>
+                            <label>
+                                <input class="offering-type" type="radio" name="optionsRadios" id="optPaaS" value="platform">
+                                PaaS
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="select" class="col-lg-2 control-label">Cloud provider</label>
+                    <div class="col-lg-10">
+                        <select class="form-control" id="selectProvider"></select>
+                    </div>
+                </div>
+                </fieldset>
+                <fieldset id="additional-reqs-fieldset">
+                    <legend>Additional requirements</legend>
+                    <div class="form-group" id="addLinkBox">
+                        <a id="add-filter-btn" class="btn btn-link" onclick="addFilter(this)">Add requirement..</a>
+                        <a id="add-ss-btn" class="btn btn-link" onclick="addSoftwareSupport(this)">Add software support..</a>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <a id="clear-btn" class="btn btn-default" onclick="clearAll()">Clear</a>
+                            <a id="find-btn" class="btn btn-primary" onclick="find()">Find!</a>
+                        </div>
+                    </div>
+                </fieldset>
+        </form>
+        <div id="query-div"></div>
+    </div>
+</body>
+</html>
